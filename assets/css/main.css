@@ -13,7 +13,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   min-height: 100vh;
-  background-image: url("../img/fondo_papel.svg");
+  background-image: url("../img/fondo_papel.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 #logo_page {
@@ -21,11 +24,9 @@ body {
 }
 
 header {
-  background-color: white;
   width: 100%;
   box-shadow: 2px 2px 5px #999;
   height: 10vh;
-  background-image: url("../img/fondo_papel.svg");
 }
 
 #menu,
@@ -152,7 +153,6 @@ header {
 }
 
 footer {
-  background-image: url("../img/fondo_papel.svg");
   /*background: rgba(11, 58, 116, 0.4);
   background: rgba(11, 58, 116);*/
   color: black;

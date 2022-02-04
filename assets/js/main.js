@@ -293,9 +293,6 @@ function iniciarJuego(){
     resultado = true;
 }
 
-function detenerJuego(){
-
-}
 
 inicio();
 
