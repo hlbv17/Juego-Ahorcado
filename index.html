@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    </head>
+    <body>
+        <header>
+            <img  src="assets/img/logo.svg" id="logo_page" alt="Alura"/>   
+        </header>
+        <div id="menu">
+            <div id="jugar" class="btn jugar"><p>Iniciar Juego</p></div>
+            <div id="agregar" class="btn agregar"><p>Añadir Palabra</p></div>
+        </div>
+        <div id="contenedor-juego">
+            <div> 
+                <canvas id="dibujo" width="250" height="200"></canvas>
+                <canvas id="errado" width="180" height="200"></canvas>
+            </div>
+            <div id="input-letra" class="grupo-input">
+                <div id="mensaje">
+                    <p></p>
+                </div>
+                <input id="letra" class="input" type="text" onkeyup="validarLetra(this)" maxlength="1"/>
+                <div id="home">
+                    <img src="assets/img/home.png" alt="volver" class="volver"/>
+                </div>
+            </div>
+            <canvas id="palabra" width="500" height="150"></canvas>
+        </div>
+        <div id="contenedor-agregar">
+            <input id="input-palabra" class="input" type="text" maxlength="12" placeholder="Escriba una nueva palabra"/>
+            <div class="grupo-input">
+                <div id="enviar" class="btn palabra"><p>Enviar y empezar</p></div>
+                <div id="cancelar" class="btn cancelar"><p>Cancelar</p></div> 
+            </div>
+        </div>
+        <footer>
+            <ul class="redes_sociales">
+                <li><a href="https://www.linkedin.com/in/helenlbv" target="_blank"><img src="assets/img/linkedin.png" alt="LinkedIn" class="footer_icon"></a></li>
+                <li><a href="https://www.instagram.com/hbernalv" target="_blank"><img src="assets/img/instagram.png" alt="Instagram" class="footer_icon"></a></li>
+            </ul>
+            <p id="derechos_reserv">Helen Bernal | Alura Challenge #2 2022</p>  
+            <address>Guayaquil, Ecuador</address>
+        </footer>
+        <script type="text/javascript" src="assets/js/main.js"></script> 
+    </body>
+</html>
