@@ -246,7 +246,7 @@ function mensajeError(cadena){
     div.appendChild(alerta);
     alerta.textContent = cadena;
     alerta.style.color = "red";
-    alerta.style.width = "80%";
+    alerta.style.width = "100%";
     alerta.style.textAlign = "center";
     alerta.setAttribute("id", "mensajeError");
 }

@@ -15,7 +15,7 @@ body {
   min-height: 100vh;
   background-image: url("../img/fondo_papel.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center center;
 }
 
@@ -77,8 +77,8 @@ header {
 
 #mensaje {
   display: none;
-  margin-left: 10%;
-  width: 570px;
+  /*margin-left: 10%;*/
+  width: 500px;
   height: 100px;
   border-radius: 25px;
   background-color: #0a3871;
@@ -110,12 +110,13 @@ header {
 }
 
 .grupo-input {
-  margin: 20px 0 20px 0;
+  margin: 20px 0px 20px 0px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  width: 100%;
 }
 
 #input-palabra {
