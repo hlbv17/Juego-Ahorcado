@@ -45,15 +45,16 @@ function validarLetra(e){
     }
     if(resultado == true){
         e.value = e.value.toUpperCase();
-        var entrada = document.querySelector("#letra").value;
+        var inputL = document.querySelector("#letra");
+        var entrada = inputL.value;
         if (entrada.value == "") {
-            mensajeError("INGRESE UNA LETRA");
+            mensajeError("INGRESE UNA LETRA", inputL);
             input.value = ""; 
         }else if (!regex.test(entrada)) {
-            mensajeError("INGRESE UNA LETRA");
+            mensajeError("INGRESE UNA LETRA", inputL);
             input.value = ""; 
         }else if(intentos.includes(entrada) == true){
-            mensajeError("ESA LETRA YA FUE INGRESADA");
+            mensajeError("ESA LETRA YA FUE INGRESADA", inputL);
             input.value = ""; 
         }else{
             verificarLetra();
@@ -66,15 +67,16 @@ function validarLetra(e){
 }
 
 function validarPalabra(){
-    var palabra = document.querySelector("#input-palabra").value.toUpperCase();
+    var inputP = document.querySelector("#input-palabra");
+    var palabra = inputP.value.toUpperCase();
     if (palabra.length <6 ){ 
-		mensajeError('INGRESE UNA PALABRA');
+		mensajeError('INGRESE UNA PALABRA', inputP);
 	}else if (palabra.value == "") {
-        mensajeError("INGRESE UNA PALABRA");
+        mensajeError("INGRESE UNA PALABRA", inputP);
     }else if (!regex.test(palabra)) {
-        mensajeError("INGRESE SOLO LETRAS");
+        mensajeError("INGRESE SOLO LETRAS", inputP);
     }else if(palabras.includes(palabra) == true){
-        mensajeError("ESA PALABRA YA FUE INGRESADA");
+        mensajeError("ESA PALABRA YA FUE INGRESADA", inputP);
     }else{
         palabras.push(palabra);
         iniciarJuego();
@@ -242,13 +244,21 @@ function mensaje(cadena){
     
 }
 
-function mensajeError(cadena){
-    div.appendChild(alerta);
+function mensajeError(cadena, elemento){
+    var alertaId = document.querySelector("#mensajeError");
+    if(alertaId != null){
+        alertaId.remove();
+    }
+    elemento.value.textContent = "";
+    elemento.focus();
+    var nodoPadre = elemento.parentNode;
+    var alerta = document.createElement("span");
     alerta.textContent = cadena;
     alerta.style.color = "red";
     alerta.style.width = "100%";
     alerta.style.textAlign = "center";
     alerta.setAttribute("id", "mensajeError");
+    nodoPadre.appendChild(alerta);
 }
 
 
